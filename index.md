@@ -1,4 +1,3 @@
-## Welcome to CampX
 
 Visit us at [CampX](CampX.herokuapp.com)
 
