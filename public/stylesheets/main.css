@@ -1,0 +1,159 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+ 
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+
+.delete-form {
+	display: inline-block;
+}
+
+
+.flex-wrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+.jumbotron {
+  
+  height: 100vh
+    
+  
+}
+.navindex {
+    margin-bottom: 0px;
+}
+.row {
+     margin-right: 0px; 
+     margin-left: 0px; 
+}
+.parallax {
+                background-image: url("http://cdn.hiconsumption.com/wp-content/uploads/2016/05/Best-Camping-Tents-2016.jpg");
+                /*color:black;*/
+                height: 500px;
+              
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+}
+
+
+.btn {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+.btn:hover {
+  opacity:1;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+  background-color: #f4511e;
+  border-color: #f4511e;
+}
+
+.btn.btn-primary.active.focus,
+.btn.btn-primary.active:focus,
+.btn.btn-primary.active:hover,
+.btn.btn-primary:active.focus,
+.btn.btn-primary:active:focus,
+.btn.btn-primary:active:hover {
+ ;
+  background-color: #f4511e;
+  border-color: #f4511e;
+  outline: none;
+  box-shadow: none;
+}
+.a input[type=text] {
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.a input[type=text]:focus {
+    width: 200%;
+}
+
+.btn-warning{
+  background-color: teal;
+  border-color: teal;
+}
+
+.btn-danger{
+  background-color: red;
+  border-color: red;
+}

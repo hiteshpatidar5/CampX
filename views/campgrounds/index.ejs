@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>CampX</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      
+
+ 
+  </head>
+  <body>
+  <nav class="navbar navbar-default navindex">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="/">CampX</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if(!currentUser){ %>
+                    <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login</a></li>
+                    <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up</a></li>
+                    <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/contact">Contact</a></li>
+
+                <% } else { %>
+                    <li><a href="/users/<%=currentUser._id%>">Profile (<%= currentUser.username %>)</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                <% } %>
+            </ul>
+          </div>
+      </div>
+  </nav>
+  
+  <div class="container">
+     <% if(error && error.length > 0) { %>
+       <div class="alert alert-danger"><p><%=error %></p></div>
+     <% } %>
+     
+     <% if(success && success.length > 0) { %>
+       <div class="alert alert-success"><p><%= success %></p></div>
+     <% } %>
+  </div>
+<!--  <div class="container">
+-->
+
+     <header class="jumbotron parallax">
+         <div class="container">
+             <h1><span class="glyphicon glyphicon-tent"></span> Welcome To CampX!</h1>
+             <p>View our hand-picked campgrounds from all over the world</p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new"><span>Add New Campground</span></a>
+             </p>
+              <p>
+              <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+                <div class="form-group a">
+                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                </div>
+              </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center flex-wrap" id="campground-grid">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                
+                <div class="thumbnail">
+                   <img src="<%= campground.image %>">
+                   <div class="caption">
+                       <h4><%= campground.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"><span>More Info</span></a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
