@@ -1,7 +1,7 @@
 
-Visit us at [CampX](CampX.herokuapp.com)
+## Visit us at [CampX](CampX.herokuapp.com)
 
-## CampX
+
 
 This project is inspired from a website yelp.com, this site has pages devoted to
 individual locations, such as restaurants or schools, where Yelp users can submit a
